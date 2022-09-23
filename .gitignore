@@ -1,0 +1,10 @@
+**/*~
+**/*.swp
+**/*pycache*
+**/venv
+
+
+# IDEA/PyCharm
+**/.idea
+.vscode/.ropeproject/config.py
+.vscode/.ropeproject/objectdb

@@ -1,0 +1,9 @@
+docker
+requests
+flask
+kafka-python
+python-logstash
+jaeger-client
+prometheus-client
+psutil
+minio

@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  docker run -d -p 2181:2181 --name zookeeper jplock/zookeeper
+  zookeeper:
+    image: jplock/zookeeper
+    networks:
+      - wsnet
+    ports:
+      - "2181:2181"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    
+  kafka:
+    image: ches/kafka
+    networks:
+      - wsnet
+    ports:
+      - "9092:9092"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka

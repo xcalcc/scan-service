@@ -1,0 +1,29 @@
+@app.route('/api/scan_task_service/v2', methods = ['GET'])
+@app.route('/v2/scan_task_service', methods = ['GET'])
+def scan_task_get():
+--
+@app.route('/api/scan_task_service/v2', methods = ['POST'])
+@app.route('/api/v2/scan_task_service', methods = ['POST'])
+@app.route('/v2/scan_task_service', methods = ['POST'])
+def scan_task_start():
+--
+@app.route('/api/v2/scan_task_service/agent/get_task', methods = ['POST', 'GET'])
+@app.route('/api/scan_task_service/v2/agent/get_task', methods = ['POST', 'GET'])
+def agent_get_task():
+--
+@app.route('/api/scan_task_service/v2/agent/add_task', methods = ['POST', 'GET'])
+def agent_add_task():
+--
+@app.route('/api/scan_task_service/<string:ver>/system/version')
+@app.route('/api/<string:ver>/scan_task_service/system/version')
+@app.route('/api/scan_task_service/system/version')
+def get_version_info(ver="v0"):
+--
+@app.route('/api/scan_task_service/v2/admin/cancel_task', methods = ['POST', 'GET'])
+def cancel_task():
+--
+@app.route('/api/scan_task_service/v2/agent/progress_report', methods = ['POST', 'GET'])
+def agent_report_progress():
+--
+@app.route("/site-map")
+def site_map():

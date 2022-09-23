@@ -1,0 +1,6 @@
+lxml
+Flask
+docker
+cryptography
+coverage
+requests

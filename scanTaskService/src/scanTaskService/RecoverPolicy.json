@@ -1,0 +1,38 @@
+{
+	"PROC_INIT": {
+		"NAME": "PROC_INIT",
+		"RETRY": 0,
+		"TIMEOUT": 0,
+		"NEXT": "ENGINE_MERGE"
+	},
+	"ENGINE_MERGE": {
+		"NAME": "ENGINE_MERGE",
+		"RETRY": 2,
+		"TIMEOUT": 0,
+		"NEXT": "VTXTDIFF"
+	},
+	"VTXTDIFF": {
+		"NAME": "VTXTDIFF",
+		"RETRY": 0,
+		"TIMEOUT": 0,
+		"NEXT": "V2CSF"
+	},
+	"V2CSF": {
+		"NAME": "V2CSF",
+		"RETRY": 0,
+		"TIMEOUT": 0,
+		"NEXT": "UP_CSF"
+	},
+	"UP_CSF": {
+		"NAME": "UP_CSF",
+		"RETRY": 3,
+		"TIMEOUT": 90,
+		"NEXT": "EXIT"
+	},
+    "PROC_FINI": {
+		"NAME": "PROC_FINI",
+		"RETRY": 0,
+		"TIMEOUT": 0,
+		"NEXT": "EXIT"
+	}
+}

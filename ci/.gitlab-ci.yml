@@ -1,0 +1,20 @@
+# image: python:3.6-slim
+
+before_script:
+  - python -V # Print out python version for debugging
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
+
+stages:
+  - test
+
+test_job:
+  stage: test
+  script:
+    - echo "Running tests"
+    - ./ci/run-sanity.sh
+
+  artifacts:
+    paths:
+      - ./result/*.txt
+      - ./result/*.log
