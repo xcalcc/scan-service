@@ -1,0 +1,3 @@
+[submodule "scanTaskService/src/scanTaskService/commondef"]
+	path = scanTaskService/src/scanTaskService/commondef
+	url = https://github.com/xcalcc/python-common-def.git
