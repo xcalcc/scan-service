@@ -24,7 +24,7 @@ pipeline {
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', trackingSubmodules: false]],
                           submoduleCfg: [],
-                          userRemoteConfigs: [[credentialsId: 'gitlab_xc5sdlcbot', url: 'https://gitlab.com/xc5sz/xcalscan.git']]
+                          userRemoteConfigs: [[credentialsId: 'xxx', url: 'https://github.com/xcalcc/scan-service.git']]
                           ])
             }
         }
@@ -45,7 +45,7 @@ pipeline {
                 export KAFKA_SERVER_HOST=localhost:9092
                 export API_SERVER_HOSTNAME=127.0.0.1
                 export DEFAULT_LOG_LEVEL=INFO
-                export TEST_TOKEN=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5Y2E2MGY1NS1mNjlmLTRmNDAtOTI5My1jNDYyNDdjNzNiNTYiLCJpYXQiOjE1NzI1Mjg1MTEsImV4cCI6MTU3MjYxNDkxMX0.HBQGJegPgrUqCvFUfxT2Pdq26y8Xlz-MAIn012e8kvOmRIW0CRQkGzsMhUSjNs-1xPMcULfq6jjiA-GnzMhFiw
+                export TEST_TOKEN=xxx
                 cd /var/jenkins_home/workspace/python-scan-service/scanTaskService/src/tests
                 exit 0
                 '''
@@ -60,7 +60,7 @@ pipeline {
                   shortCommitHash = getShortCommitHash()
                   IMAGE_VERSION = commitTime + "." + shortCommitHash
                   echo "${IMAGE_VERSION}"
-                  withCredentials([usernamePassword(credentialsId: 'harbor_xc5sdlcbot', passwordVariable: 'password', usernameVariable:'user')]) {
+                  withCredentials([usernamePassword(credentialsId: 'xxx', passwordVariable: 'password', usernameVariable:'user')]) {
                     sh """
                     docker login -u $user -p $password scan.xcalibyte.co:8129
                     docker build -t $SCAN_IMAGE:${IMAGE_VERSION} -f scanTaskService/docker/ws.scan.Dockerfile .
