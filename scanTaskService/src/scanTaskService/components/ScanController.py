@@ -427,7 +427,7 @@ class ScanController:
             log.trace(self.fetch_gdf, "get repo diff file")
             diff_result_file = os.path.join(object_prefix_path, VCS_DIFF_RESULT_FILE_NAME)
             if file_util.file_exists(bucket_name, diff_result_file):
-                shutil.download(bucket_name, diff_result_file, os.path.join(self.work_dir, VCS_DIFF_RESULT_FILE_NAME))
+                file_util.download_file(bucket_name, diff_result_file, os.path.join(self.work_dir, VCS_DIFF_RESULT_FILE_NAME))
 
     def fetch_preprocess_file(self, object_prefix_path, bucket_name, file_util):
         with XcalLogger(PROC.ENGINE_MERGE.name, self.fetch_pref, parent=self.logger) as log:
